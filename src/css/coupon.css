@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('../lib/font/iconfont.eot');
+    src: url('../lib/font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../lib/font/iconfont.woff') format('woff'),
+    url('../lib/font/iconfont.ttf') format('truetype'),
+    url('../lib/font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family: iconfont !important;
+    font-size: 0.68rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+body{
+    min-width: 320px;!important;
+    margin: 0;
+}
+form{
+    margin-top:1.054rem;
+    /*左右padding*/
+    padding: 0 1.073rem;
+}
+.col-100{
+    width: 100%;
+    height: 2.388rem;
+    line-height: 2.388rem;
+    background: #fff;
+    font-size: 0.64rem;
+    color: #000;
+    vertical-align: middle;
+}
+.col-100 .lg_left{
+    margin-left:0.341rem ;
+    display: inline-block;
+    height: 1.706rem;
+    line-height: 1.706rem;
+}
+.lg_tel img{
+    width:0.533rem;
+    height:0.874rem ;
+    position: relative;
+    top:.19rem;
+}
+.lg_code img{
+    width:0.768rem;
+    height:0.6617rem ;
+    position: relative;
+    top:.15rem;
+}
+.col-100 input {
+    outline: none;
+    background: #fff;
+    height: 1.706rem;
+    width: 40%;
+}
+.lg_buttom {
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.lg_form button {
+    width: 5.128rem;
+    height: 1.364rem;
+    border-radius: 0.682rem;
+    border: 1px solid #000;
+    font-size: 0.51rem;
+    background: none;
+}
+.lg_form1 input {
+    margin-left: 0.68rem;
+}
+.lg_form2 input {
+    margin-left: 0.681rem;
+}
+#ma{
+    background: #fede0a;
+    border:none;
+    color: #fff;
+}
+
+
+.lp_loginBtn {
+    width: 100%;
+    height: 2.133rem;
+    border-radius: 1.06rem;
+    background-color: #fede0a;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #000;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    margin-top: 2.816rem;
+    outline: none;
+}
+
+.code_disable {
+    border: #282828 2px solid
+}
+
+.code_enable {
+    border: #ccc 2px solid
+}
+.lg_show{
+    margin-top: 0.54rem;
+}
+.lg_hide{
+    border:none;
+}
+/*-----------------------*/
+.errorMsg {
+    color : red;
+    padding-left: 2.066rem;
+}
+.lp_loginBtn:disabled {/*伪类*/
+    background: #dddddd;
+}
+
+

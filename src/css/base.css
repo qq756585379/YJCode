@@ -1,0 +1,32 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+img{
+    vertical-align: middle;/*清除3px的bug*/
+    border: 0;
+}
+input,textarea{
+    border: 0;
+    outline: none;
+    resize: none;
+    /*清除ios浏览器默认的样式*/
+    -webkit-appearance: none;
+}
+ul{list-style: none;  }
+a{text-decoration: none; color: #333;  }
+.clearfix::after,
+.clearfix::before{
+    clear: both;
+    content: '.';
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    display: block;
+}
+
+
+
+
+
+
+
