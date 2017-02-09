@@ -2,12 +2,12 @@
     font-family: 'iconfont';
     src: url('../lib/font/iconfont.eot');
     src: url('../lib/font/iconfont.eot?#iefix') format('embedded-opentype'),
-    url('../lib/font/iconfont.woff') format('woff'),
-    url('../lib/font/iconfont.ttf') format('truetype'),
-    url('../lib/font/iconfont.svg#iconfont') format('svg');
+         url('../lib/font/iconfont.woff') format('woff'),
+         url('../lib/font/iconfont.ttf') format('truetype'),
+         url('../lib/font/iconfont.svg#iconfont') format('svg');
 }
 .iconfont{
-    font-family: iconfont !important;
+    font-family: 'iconfont' !important;
     font-size: 0.68rem;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
@@ -16,14 +16,15 @@
 }
 body{
     min-width: 320px;!important;
+    max-width: 640px;!important;
     margin: 0;
 }
-form{
+.postForm{
     margin-top:1.054rem;
     /*左右padding*/
     padding: 0 1.073rem;
 }
-.col-100{
+.postForm .col-100{
     width: 100%;
     height: 2.388rem;
     line-height: 2.388rem;
@@ -32,7 +33,7 @@ form{
     color: #000;
     vertical-align: middle;
 }
-.col-100 .lg_left{
+.postForm .col-100 .lg_left{
     margin-left:0.341rem ;
     display: inline-block;
     height: 1.706rem;
@@ -55,32 +56,27 @@ form{
     background: #fff;
     height: 1.706rem;
     width: 40%;
+    margin-left: 0.68rem;
 }
-.lg_buttom {
+.postForm div:nth-of-type(1){
     border-bottom: 1px solid #bbbbbb;
 }
-
-.lg_form button {
+.postForm div:nth-of-type(3){
+    border-bottom: 1px solid #bbbbbb;
+}
+.getcode_btn{
     width: 5.128rem;
     height: 1.364rem;
     border-radius: 0.682rem;
-    border: 1px solid #000;
+    border: 1px solid white;
     font-size: 0.51rem;
-    background: none;
-}
-.lg_form1 input {
-    margin-left: 0.68rem;
-}
-.lg_form2 input {
-    margin-left: 0.681rem;
-}
-#ma{
     background: #fede0a;
-    border:none;
     color: #fff;
+    outline: none;
 }
-
-
+.getcode_btn:disabled{
+    background: lightgrey;
+}
 .lp_loginBtn {
     width: 100%;
     height: 2.133rem;
@@ -95,27 +91,65 @@ form{
     margin-top: 2.816rem;
     outline: none;
 }
-
-.code_disable {
-    border: #282828 2px solid
-}
-
-.code_enable {
-    border: #ccc 2px solid
-}
-.lg_show{
-    margin-top: 0.54rem;
-}
-.lg_hide{
-    border:none;
-}
-/*-----------------------*/
-.errorMsg {
-    color : red;
-    padding-left: 2.066rem;
-}
 .lp_loginBtn:disabled {/*伪类*/
-    background: #dddddd;
+     background: #dddddd;
+ }
+.tip span{
+    width: 100px;
+    color: red;
+    margin: 0 auto;
+    text-align: center;
 }
 
 
+/***** ****优惠券样式表***************/
+#quan{
+    padding: 0 1.073rem;
+}
+#quan .num{
+    background: url("../images/Point_card@2x.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    width: 100%;
+    height:5.333rem;
+    margin-top:1.706rem ;
+}
+.num span{
+    position: absolute;
+    bottom: .213rem;
+    right: 0.895rem;
+    font-size: 0.426rem;
+    font-weight: 800;
+    font-family: 微软雅黑;
+    color: #1b2345;
+}
+#quan .coupon-num{
+    background: url("../images/bg@2x.png") no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    position: relative;
+    height: 2.56rem;
+    line-height: 2.56rem;
+    margin-top: 0.064rem;
+    text-align: center;
+    font-size: 1.28rem;
+    color: #ffffff;
+    font-weight: 800;
+    visibility: hidden;
+}
+.coupon-num .first{
+    position: absolute;
+    top:-0.626rem;
+    left:0.52rem;
+    font-size: 0.36rem;
+    font-weight: 800;
+    color: #1b2345;
+}
+#footer{
+    margin-top:3.24rem ;
+    margin-bottom: .6rem;
+    font-size: .512rem;
+    color: #999;
+    padding: 0 1.073rem;
+    /**letter-spacing: .2rem;*/
+}

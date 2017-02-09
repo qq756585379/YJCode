@@ -16,52 +16,69 @@
 
 <body ng-app="quanApp" ng-controller="QuanController">
 
-	<form name="postForm">
-
-	    <div class="col-100 lg_show lg_buttom">
+	<form name="postForm" class="postForm" novalidate>
+		<!--请输入您的手机号-->
+	    <div class="col-100">
 	        <span class="lg_tel lg_left iconfont"><img src="images/phone.png" alt=""></span>
-	        <input type="text" class="lg_phone" placeholder="请输入您的手机号"
-	               autocomplete="off" name="phone"
-	               ng-model="tel"
-	               ng-required="true"
-	               ng-pattern="/^1\d{10}$/"/>
+	        <input type="text"
+				   class="lg_phone"
+				   placeholder="请输入您的手机号"
+	               autocomplete="off"
+				   name="phone"
+	               ng-model="user.tel"
+	               ng-pattern="/^1\d{10}$/" required>
+	    </div>
+	    <div class="col-100 tip" ng-show="postForm.phone.$dirty && postForm.phone.$invalid">
+	        <span>请输入11位手机号码</span>
 	    </div>
 
-	    <div class="col-100 lg_hide" ng-show="loginForm.phone.$dirty&&loginForm.phone.$invalid"
-	         ng-messages="loginForm.phone.$error" ng-class="'errorMsg'">
-	        <span ng-message="required" ng-bind="'请填写手机号'"></span>
-	        <span ng-message="pattern" ng-bind="'请输入11位手机号码'"></span>
-	    </div>
-
-	    <div class="col-100 lg_show lg_buttom">
+		<!--请输入验证码-->
+	    <div class="col-100">
 	        <span class="lg_code lg_left iconfont"><img src="images/code.png" alt=""></span>
-	        <input type="text" class="lg_checkCode" placeholder="请输入验证码"
-	               autocomplete="off" name="code"
+	        <input type="text"
+				   class="lg_checkCode"
+				   placeholder="请输入验证码"
+	               autocomplete="off"
+				   name="code"
 	               ng-model="user.code"
-	               ng-required="true"
 	               ng-pattern="/^\d{6}$/"
-	               ng-disabled="!isTiming"
-	               />
-	        <button id="ma" class="lg_btn btn" ng-bind="btnText" ng-click="getCode()" ng-disabled="isTiming"></button>
+	               ng-disabled="!isTiming" required>
+	        <button id="ma" class="getcode_btn" ng-bind="btnText" ng-click="getCode()" ng-disabled="isTiming"></button>
 	    </div>
-
-	    <div class="col-100 lg_hide " ng-show="loginForm.code.$dirty&&loginForm.code.$invalid"
-	         ng-messages="loginForm.code.$error" ng-class="'errorMsg'">
-	        <span ng-message="required" ng-bind="'请输入验证码'"></span>
-	        <span ng-message="pattern" ng-bind="'请输入6位验证码'"></span>
+	    <div class="col-100 tip" ng-show="postForm.code.$dirty && postForm.code.$invalid">
+	        <span>请输入6位验证码</span>
 	    </div>
-
-	    <button class="lp_loginBtn btn" ng-disabled="loginForm.$invalid" ng-click="submit()">
-	    	确认领取
-	    </button>
+		<button class="lp_loginBtn" ng-click="submit()">
+			确认领取
+		</button>
+	    <!--<button class="lp_loginBtn" ng-disabled="postForm.$invalid" ng-click="submit()">-->
+	    	<!--确认领取-->
+	    <!--</button>-->
 	</form>
 
-	<script type="text/javascript" src="lib/angular/angular.min.js"></script>
-	<script type="text/javascript" src="lib/angular-messages/angular-messages.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript">
+	<footer>
+		<div id="quan">
+			<div class="num">
+				<span>2016.12.31--2017.01.02</span>
+			</div>
+			<div class="coupon-num">
+				<span class="first">序列号</span>
+				<span class="second" ng-model="coupon"></span>
+			</div>
+		</div>
+		<div id="footer">
+			<p>使用说明：1.本积点卡限2016.12.31日至2017.3.18日期间使用，逾期作废；
+				2.限1-8楼购买积点商品使用，特例商品除外。
+				3.此券码建议立即到6F服务区兑换实体优惠卡或截屏保存，若遗失请重新验证领取。
+				4.本活动仅对2016年12月31日至2017年3月18日期间新世界城新注册会员有效，每人限领一张。
+				5.本活动最终解释权归上海木空网络科技有限公司所有。
+			</p>
+		</div>
+	</footer>
 
-	</script>
+	<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/coupon.js"></script>
 </body>
 
 </html>

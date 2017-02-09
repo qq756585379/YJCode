@@ -15,10 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.6.2",
     "bootstrap": "^3.3.7",
     "jquery": "^3.1.1",
-    "angular-messages": "^1.6.2",
     "html5shiv": "^3.7.3",
     "respond": "^1.4.2"
   }
