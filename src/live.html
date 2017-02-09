@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>直播列表</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/live.css">
+    <!--[if lt IE 9]>
+    <script src="lib/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="lib/respond/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="liveApp" ng-controller="LiveController">
+
+	<div id="wrapper">
+        <nav>
+            <div class="liver"><span><img src="images/today@2x.png" alt=""></span>今日主播</div>
+            <ul class="clearfix list">
+                <li ng-repeat="item in head" ng-click="live($index)">
+                    <img src lazy-src="{{item.user_image}}" alt="">
+                    <span ng-bind="item.user_nicname"></span>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content">
+            <div class="live_list"><img src="images/list@2x.png" alt="">直播列表</div>
+            <ul>
+                <li ng-repeat="item in list" ng-click="fun($index)">
+                    <a href="{{item.live_rtmp_play_url}}">
+                        <img src lazy-src="{{item.live_snapshot_play_url}}" alt="">
+                    </a>
+                    <div class="icon" ng-show="item.live_type==1">直播中</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/me-lazyload.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/live.js"></script>
+</body>
+</html>

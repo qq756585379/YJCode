@@ -1,5 +1,6 @@
 
 setRem();
+
 window.addEventListener("onorientationchange" in window ? "orientationchange":"resize",function(){
     setRem();
 });
