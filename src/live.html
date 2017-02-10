@@ -6,14 +6,26 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="on" http-equiv="cleartype">
+
 	<link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/live.css">
+    <style>
+        .ng-cloak,
+        [ng-cloak] {
+            display: none;
+        }
+    </style>
     <!--[if lt IE 9]>
     <script src="lib/html5shiv/dist/html5shiv.min.js"></script>
     <script src="lib/respond/dest/respond.min.js"></script>
     <![endif]-->
+
 </head>
-<body ng-app="liveApp" ng-controller="LiveController">
+<body ng-app="liveApp" ng-controller="LiveController" ng-cloak="">
 
 	<div id="wrapper">
         <nav>
@@ -29,7 +41,7 @@
         <div id="content">
             <div class="live_list"><img src="images/list@2x.png" alt="">直播列表</div>
             <ul>
-                <li ng-repeat="item in list" ng-click="fun($index)">
+                <li ng-repeat="item in list track by $index" ng-click="fun($index)">
                     <a href="{{item.live_rtmp_play_url}}">
                         <img src lazy-src="{{item.live_snapshot_play_url}}" alt="">
                     </a>

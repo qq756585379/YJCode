@@ -3,8 +3,9 @@
 
 (function(angular) {
 
-    angular.module('quanApp',[])
-        .controller('QuanController',['$scope','$interval','$http',function ($scope, $interval, $http) {
+    var quanApp = angular.module('quanApp',[]);
+
+    quanApp.controller('QuanController',['$scope','$interval','$http',function ($scope, $interval, $http) {
 
             $scope.btnText = '获取验证码';
             $scope.isTiming = false;
@@ -13,6 +14,31 @@
                 tel: '',
                 code: ''
             };
+
+
+            if(window.location.search.split('?')[1]){
+                var url = window.location.search.split('?')[1];
+            }
+            var telephone;
+            if(url.split('&')[0].split('=')[1]){
+                telephone = url.split('&')[0].split('=')[1];
+            }else{
+                var input = document.querySelector('.lg_phone');
+                telephone = input.value
+            }
+            if(url.split('&')[0].split('=')[1]){
+                var telephoneNumber = url.split('&')[0].split('=')[1];
+                console.log(telephoneNumber);
+            }
+            if(url.split('&')[1].split('=')[1]){
+                var activity_id = url.split('&')[1].split('=')[1];
+                console.log(activity_id);
+            }
+            if(url.split('&')[2].split('=')[1]){
+                var user_id  = url.split('&')[2].split('=')[1];
+                console.log(user_id);
+            }
+
 
             //官方的API中提供了一个$scope.$watch方法，
             $scope.$watch('user.tel', function(now, old) {
@@ -102,6 +128,21 @@
             };
 
         }]);
+
+    quanApp.directive('test',['$parse',function ($parse) {
+        var dateFilter = $filter('date');
+        return {
+            require: 'ngModel',
+            link: function (scope, element, attrs, ctrl) {
+                var url = window.location.search.split('?')[1];
+                var telephone = url.split('&')[0].split('=')[1];
+                var input = document.querySelector('.lg_phone');
+                input.value =telephone;
+                //更新模型
+                $parse(attrs['ngModel']).assign(scope, input.value);
+            }
+        };
+    }]);
 
 })(angular);
 

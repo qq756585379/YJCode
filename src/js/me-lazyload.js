@@ -62,7 +62,7 @@ angular.module('me-lazyload', [])
             }
 
             return xVisible && yVisible;
-        };
+        }
 
         function checkImage(){
             angular.forEach(elements, function(obj, key) {
@@ -89,15 +89,22 @@ angular.module('me-lazyload', [])
         }
 
         return {
+            /**
+             *   指令系统一共可以定义4种类型的指令
+             *   1. restrict: 'E' // 元素（element）
+             *   2. restrict: 'A' // 属性（attribute）
+             *   3. restrict: 'C' // 类名（class）
+             *   4. restrict: 'M' // 注释（comment）
+             */
             restrict: 'A',
             scope: {
-                lazySrc: '@',
+                //@后面可以省略
+                lazySrc: '@lazySrc',
                 animateVisible: '@',
                 animateSpeed: '@'
             },
             link: function($scope, iElement){
                 iElement.bind('load', onLoad);
-
                 $scope.$watch('lazySrc', function(){
                     var speed = "1s";
                     if ($scope.animateSpeed != null) {

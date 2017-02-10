@@ -6,6 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+	<meta content="telephone=no" name="format-detection">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="on" http-equiv="cleartype">
+
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/coupon.css">
 	<!--[if lt IE 9]>
@@ -48,12 +53,9 @@
 	    <div class="col-100 tip" ng-show="postForm.code.$dirty && postForm.code.$invalid">
 	        <span>请输入6位验证码</span>
 	    </div>
-		<button class="lp_loginBtn" ng-click="submit()">
-			确认领取
-		</button>
-	    <!--<button class="lp_loginBtn" ng-disabled="postForm.$invalid" ng-click="submit()">-->
-	    	<!--确认领取-->
-	    <!--</button>-->
+	    <button class="lp_loginBtn" ng-disabled="postForm.$invalid" ng-click="submit()">
+	    	确认领取
+	    </button>
 	</form>
 
 	<footer>
